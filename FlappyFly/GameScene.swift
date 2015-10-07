@@ -11,7 +11,9 @@ import SpriteKit
 class GameScene: SKScene {
 
     private var flappy: SKSpriteNode!
+    private var flappyAtlas: SKTextureAtlas!
     private var grounds: SKNode!
+    private var obstacles: SKNode!
     
     var timeStamp: CFTimeInterval = -1.0
 
@@ -24,17 +26,33 @@ class GameScene: SKScene {
 //        myLabel.fontSize = 65;
 //        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         
+        
+        
         if let node = childNodeWithName("flappy") as? SKSpriteNode {
             flappy = node
+//            flappyAtlas = SKTextureAtlas(named: "flappy")
+//            flappyAtlas.textureNamed("fly1")
+//            flappyAtlas.textureNamed("fly2")
+            //creating action in sks currently crashes xcode
+            let f1 = SKTexture(imageNamed: "fly1")
+            let f2 = SKTexture(imageNamed: "fly2")
+            let action = SKAction.animateWithTextures([f1,f2], timePerFrame: 0.1)
+            let loop = SKAction.repeatActionForever(action)
+            flappy.runAction(loop)
             print("found flappy")
         }
         
-        if let ground = childNodeWithName("ground") {
-            grounds = ground
+        if let node = childNodeWithName("ground") {
+            grounds = node
+        }
+        
+        if let node = childNodeWithName("obstacles") {
+            obstacles = node
         }
 //        physicsWorld.gravity = CGVectorMake(0.0, -1.0)
         
-        
+        addObstacle()
+
 //        self.addChild(myLabel)
     }
     
@@ -78,8 +96,22 @@ class GameScene: SKScene {
         }
         let diff = currentTime - timeStamp
         timeStamp = currentTime
-        let moveSpeed = CGFloat(MOVE_CONST * diff)
+        let move = CGFloat(MOVE_CONST * diff)
 //        print(moveSpeed)
-        grounds.position = CGPointMake(grounds.position.x - moveSpeed, grounds.position.y)
+        grounds.position = CGPointMake(grounds.position.x - move, grounds.position.y)
+        obstacles.position = CGPointMake(obstacles.position.x - move, obstacles.position.y)
+        
+    }
+    
+    func addObstacle() {
+//        if let file = SKNode(fileNamed: "Obstacle"), let obstacle = file.childNodeWithName("obstacle") {
+//            obstacle.removeFromParent()
+//            obstacles.addChild(obstacle)
+//        }
+        if let file = SKScene(fileNamed: "Obstacle") {
+            for child in file.children {
+                obstacles.addChild(child.copy() as! SKNode)
+            }
+        }
     }
 }

@@ -16,6 +16,7 @@
 		496613ED1BC45C6900DAE794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496613EC1BC45C6900DAE794 /* Assets.xcassets */; };
 		496613F81BC45C6A00DAE794 /* FlappyFlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496613F71BC45C6A00DAE794 /* FlappyFlyTests.swift */; };
 		496614031BC45C6A00DAE794 /* FlappyFlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496614021BC45C6A00DAE794 /* FlappyFlyUITests.swift */; };
+		49F688F31BC5B06B0035B36D /* Obstacle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49F688F21BC5B06B0035B36D /* Obstacle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		496613FE1BC45C6A00DAE794 /* FlappyFlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyFlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		496614021BC45C6A00DAE794 /* FlappyFlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyFlyUITests.swift; sourceTree = "<group>"; };
 		496614041BC45C6A00DAE794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F688F21BC5B06B0035B36D /* Obstacle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				496613E91BC45C6900DAE794 /* Main.storyboard */,
 				496613EC1BC45C6900DAE794 /* Assets.xcassets */,
 				496613EE1BC45C6900DAE794 /* Info.plist */,
+				49F688F21BC5B06B0035B36D /* Obstacle.sks */,
 			);
 			path = FlappyFly;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F688F31BC5B06B0035B36D /* Obstacle.sks in Resources */,
 				496613EB1BC45C6900DAE794 /* Main.storyboard in Resources */,
 				496613E21BC45C6900DAE794 /* GameScene.sks in Resources */,
 				496613ED1BC45C6900DAE794 /* Assets.xcassets in Resources */,
@@ -485,6 +489,7 @@
 				496614091BC45C6A00DAE794 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4966140A1BC45C6A00DAE794 /* Build configuration list for PBXNativeTarget "FlappyFlyTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +498,7 @@
 				4966140C1BC45C6A00DAE794 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4966140D1BC45C6A00DAE794 /* Build configuration list for PBXNativeTarget "FlappyFlyUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +507,7 @@
 				4966140F1BC45C6A00DAE794 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
